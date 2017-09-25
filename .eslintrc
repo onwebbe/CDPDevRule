@@ -15,7 +15,12 @@
     "eslint:recommended",
     "google"],
   "rules": {
-    "max-len": [1, "always"],
+    "max-len": [1, {
+      code: 80,
+      "ignoreComments": true,
+      "ignoreTrailingComments": true,
+      "ignoreRegExpLiterals": true
+    }],
     "comma-dangle": ["error", {
       "arrays": "never",
       "objects": "never",
@@ -24,7 +29,7 @@
       "functions": "never"
     }],
     "no-unused-vars": ["warn", { "vars": "all", "args": "none", "ignoreRestSiblings": true }],
-    "no-var": [1, "always"],
+    "no-var": 1,
     "no-console": 1,
     "linebreak-style": 1
   }

@@ -6,7 +6,7 @@ var rename  = require('gulp-rename');
 
 var rootPath = "/data/sfsf/workspace/trunk/";
 var serverRoot = rootPath + "tomcat-sfs/webapps/ROOT/ui/cdp/";
-var configFile = __dirname + '.eslintrc';
+var configFile = __dirname + '/.eslintrc';
 var msgs = "";
 
 gulp.task('default', ['watchjs', 'watchcss', 'watchpages']);
