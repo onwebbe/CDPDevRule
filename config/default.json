@@ -1,6 +1,7 @@
 {
   "rootPath" : "/data/sfsf/workspace/trunk/",
   "eslintConfig" : "/.eslintrc",
+  "serverPath" : "tomcat-sfs/webapps/ROOT/ui/",
   "monitorModules" : [
     {
         "path" : "cdp/au-cdp-web/src/main/webapp/ui/"

@@ -6,7 +6,7 @@ var rename  = require('gulp-rename');
 var config = require("config");
 
 var rootPath = config.get("rootPath");
-var serverRoot = rootPath + "tomcat-sfs/webapps/ROOT/ui/";
+var serverRoot = rootPath + config.get("serverPath");
 var configFile = __dirname + config.get("eslintConfig");
 var msgs = "";
 
