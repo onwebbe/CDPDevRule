@@ -1,5 +1,12 @@
 {
   "rootPath" : "/data/sfsf/workspace/trunk/",
   "eslintConfig" : "/.eslintrc",
-  "moduleRoot" : "cdp/au-cdp-web/src/main/webapp/ui/cdp/"
+  "monitorModules" : [
+    {
+        "path" : "cdp/au-cdp-web/src/main/webapp/ui/"
+    },
+    {
+        "path" : "V4/au-V4-web/src/main/webapp/ui/"
+    }
+  ]
 }
