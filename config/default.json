@@ -1,0 +1,5 @@
+{
+  "rootPath" : "/data/sfsf/workspace/trunk/",
+  "eslintConfig" : "/.eslintrc",
+  "moduleRoot" : "cdp/au-cdp-web/src/main/webapp/ui/cdp/"
+}

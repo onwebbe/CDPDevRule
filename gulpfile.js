@@ -3,16 +3,17 @@ var plumber = require('gulp-plumber');
 var notify  = require("gulp-notify");
 var eslint  = require('gulp-eslint');
 var rename  = require('gulp-rename');
+var config = require("config");
 
-var rootPath = "/data/sfsf/workspace/trunk/";
+var rootPath = config.get("rootPath");
 var serverRoot = rootPath + "tomcat-sfs/webapps/ROOT/ui/cdp/";
-var configFile = __dirname + '/.eslintrc';
+var configFile = __dirname + config.get("eslintConfig");
 var msgs = "";
 
 gulp.task('default', ['watchjs', 'watchcss', 'watchpages']);
 
 gulp.task('watchjs', function(){
-    gulp.watch(rootPath + 'cdp/au-cdp-web/src/main/webapp/ui/cdp/js/**/*.js')
+    gulp.watch(rootPath + config.get("moduleRoot") + 'js/**/*.js')
     .on("change", function(file) {
       gulp
         .src(file.path, {
@@ -41,7 +42,7 @@ gulp.task('watchjs', function(){
             var args = Array.prototype.slice.call(arguments);
 
             notify.onError({
-                title: 'compile error',
+                title: 'esLint error',
                 /*message: '<%=error.message %>'*/
                 message: msgs
             }).apply(this, args);//替换为当前对象
@@ -49,17 +50,17 @@ gulp.task('watchjs', function(){
         })
         .pipe(rename({ suffix: '_dev-snapshot' }))
         .pipe(gulp.dest(serverRoot + 'js',  {
-            base: rootPath + 'cdp/au-cdp-web/src/main/webapp/ui/cdp/js/'
+            base: rootPath + config.get("moduleRoot") + '/js/'
         }));
   });
 });
 
 gulp.task('watchcss', function(){
-    gulp.watch(rootPath + 'cdp/au-cdp-web/src/main/webapp/ui/cdp/css/**/*.css')
+    gulp.watch(rootPath + config.get("moduleRoot") + 'css/**/*.css')
     .on("change", function(file) {
       gulp
         .src(file.path, {
-            base: rootPath + 'cdp/au-cdp-web/src/main/webapp/ui/cdp/css/'
+            base: rootPath + config.get("moduleRoot") + '/css/'
         })
         .pipe(rename({ suffix: '_dev-snapshot' }))
         .pipe(gulp.dest(serverRoot + 'css'));
@@ -67,11 +68,11 @@ gulp.task('watchcss', function(){
 });
 
 gulp.task('watchpages', function(){
-    gulp.watch(rootPath + 'cdp/au-cdp-web/src/main/webapp/ui/cdp/pages/**/*.xhtml')
+    gulp.watch(rootPath + config.get("moduleRoot") + '/pages/**/*.xhtml')
     .on("change", function(file) {
       gulp
         .src(file.path, {
-            base: rootPath + 'cdp/au-cdp-web/src/main/webapp/ui/cdp/pages/'
+            base: rootPath + config.get("moduleRoot") + '/pages/'
         })
         .pipe(gulp.dest(serverRoot + 'pages'));
   });
