@@ -4,6 +4,8 @@ var notify  = require("gulp-notify");
 var eslint  = require('gulp-eslint');
 var rename  = require('gulp-rename');
 var config = require("config");
+var myFormatter = require("eslint-no-warning-formatter");
+
 
 var rootPath = config.get("rootPath");
 var serverRoot = rootPath + config.get("serverPath");
@@ -26,7 +28,7 @@ for(let i = 0; i < monitorModules.length; i ++) {
             })
             .pipe(plumber())
             .pipe(eslint(configFile))
-            .pipe(eslint.format())
+            .pipe(eslint.format(myFormatter))
             .pipe(eslint.result(result => {
                     // Called for each ESLint result.
                     var args = Array.prototype.slice.call(arguments);
