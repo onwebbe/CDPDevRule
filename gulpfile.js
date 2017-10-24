@@ -15,7 +15,7 @@ var msgs = "";
 var allTasks = [];
 var monitorModules = config.get("monitorModules");
 
-for(let i = 0; i < monitorModules.length; i ++) {
+for(let i = 0; i < monitorModules.length; i++) {
     let modulePath = monitorModules[i].path;
     console.log(rootPath + modulePath);
     allTasks.push("watchjs" + i);
@@ -69,7 +69,7 @@ for(let i = 0; i < monitorModules.length; i ++) {
             })
             .pipe(rename({ suffix: '_dev-snapshot' }))
             .pipe(gulp.dest(serverRoot));
-      });
+        });
     });
 
     allTasks.push("watchpages" + i);

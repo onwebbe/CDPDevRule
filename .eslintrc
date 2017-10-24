@@ -11,7 +11,10 @@
     "navigator": false,
     "window": false,
     "jQuery": false,
-    "sap": false
+    "sap": false,
+    "MSGS": false,
+    "QUnit": false,
+    "MentoringMatchDataModel": false
   },
   "extends": [
     "eslint:recommended",
@@ -19,7 +22,7 @@
   "rules": {
     "indent": [ "error", 2 ],
     "max-len": [1, {
-      code: 80,
+      code: 200,
       "ignoreComments": true,
       "ignoreTrailingComments": true,
       "ignoreRegExpLiterals": true
@@ -32,7 +35,7 @@
       "functions": "never"
     }],
     "no-unused-vars": ["warn", { "vars": "all", "args": "none", "ignoreRestSiblings": true }],
-    "no-var": 1,
+    "no-var": 0,
     "linebreak-style": 1,
     "valid-jsdoc": ["error", {"requireReturn": false}],
     "array-callback-return": "error",
@@ -43,7 +46,7 @@
     "eqeqeq": 0,
     "no-alert": "error",
     "no-console": "error",
-    "no-else-return": "error",
+    "no-else-return": 1,
     "no-empty-function": "error",
     "require-jsdoc": ["error", {
         "require": {
@@ -54,6 +57,9 @@
         }
     }],
     "no-trailing-spaces": "error",
-    "spaced-comment": ["error", "always", { "exceptions": ["!"] }]
+    "spaced-comment": ["error", "always", { "markers": ["!"] }],
+    "space-before-function-paren": 0,
+    "dot-notation": 1,
+    "no-multi-spaces": "error"
   }
 }

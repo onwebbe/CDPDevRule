@@ -4,7 +4,7 @@
   "serverPath" : "tomcat-sfs/webapps/ROOT/ui/",
   "monitorModules" : [
     {
-        "path" : "cdp/au-cdp-web/src/main/webapp/ui/"
+        "path" : "cdp/au-cdp-web/src/**/*/webapp/ui/"
     },
     {
         "path" : "V4/au-V4-web/src/main/webapp/ui/"
